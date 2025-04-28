@@ -1,0 +1,22 @@
+<div class="max-w-5xl mx-auto p-6">
+  <h1 class="text-3xl font-bold mb-6 text-center">Active Users</h1>
+
+  <div class="overflow-x-auto">
+    <table class="min-w-full bg-white shadow-md rounded">
+      <thead class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+        <tr>
+          <th class="py-3 px-6 text-left">Email</th>
+          <th class="py-3 px-6 text-left">Signed Up</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-700 text-sm">
+        <% @users.each do |user| %>
+          <tr class="border-b border-gray-200 hover:bg-gray-100">
+            <td class="py-3 px-6 text-left"><%= user.email %></td>
+            <td class="py-3 px-6 text-left"><%= user.created_at.strftime("%Y-%m-%d") %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
